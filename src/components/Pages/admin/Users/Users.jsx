@@ -3,7 +3,7 @@ import pessoa from '../../../../assets/_images/people01.png'
 import SideBarAdmin from "../../../Elements/SideBarAdmin/SideBarAdmin";
 import style from './Users.module.css'
 import { FaClosedCaptioning, FaMagnifyingGlass, FaMessage, FaPersonCircleXmark, FaStreetView, FaWalkieTalkie } from 'react-icons/fa6'
-import { MdAdd, MdAddPhotoAlternate, MdClose, MdDelete, MdEdit, MdPreview, MdViewAgenda } from 'react-icons/md'
+import { MdAdd, MdClose, MdDelete, MdEdit, MdPreview, MdViewAgenda } from 'react-icons/md'
 import { TbRulerMeasure } from "react-icons/tb";
 import { useState } from "react";
 export default function Users(params) {

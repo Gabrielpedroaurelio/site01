@@ -24,13 +24,18 @@ export default function Signals(params) {
                         lista.map((item) => (
                             <div className={style.Signal} key={item}>
                                 <div className={style.infoSignal}>
-                                    <div className={style.video}></div>
+                                    <div className={style.video}>
+                                        <video src={video}></video>
+                                    </div>
                                     <div className={style.content}>
-
+                                        <span>Olá</span>
+                           
                                     </div>
                                 </div>
                                 <div className={style.controllersSignal}>
-                                    
+                                    <MdEdit />
+                                    <MdDelete />
+                                    <MdPreview />
                                 </div>
                             </div>
 
@@ -58,8 +63,8 @@ export default function Signals(params) {
                                     <button>Ver Gesto</button>
                                 </div>
                                 <div className={style.actions}>
-                                <button className={style.bgEdit}><MdEdit /></button>
-                                        <button className={style.bgDelete}><MdDelete /></button>
-                                        <button className={style.bgView}><MdPreview /></button>
+                                <button className={style.bgEdit}>  </button>
+                                        <button className={style.bgDelete}>  </button>
+                                        <button className={style.bgView}>  </button>
                                 </div>
  */
