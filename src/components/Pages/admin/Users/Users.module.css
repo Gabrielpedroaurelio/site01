@@ -1,0 +1,290 @@
+@import url(../../../../assets/_css/includes/includes.cores-fonte.css);
+
+.containerMainUser {
+
+    margin-left: 180px;
+
+}
+
+.containerMainUser .containerControles {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 900px;
+    min-width: 350px;
+    margin: auto;
+
+}
+
+.containerMainUser .containerControles button {
+    border: none;
+    color: #fff;
+    background-color: #34d399;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px #313131;
+    display: flex;
+    align-items: center;
+}
+
+.containerMainUser .containerControles button svg {
+    font-size: 15pt;
+}
+
+.containerMainUser .containerContent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+}
+
+.containerMainUser .containerContent .user {
+    width: 150px;
+    border-radius: 5px;
+    height: 150px;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all .2s ease-in;
+    background-color: rgb(255, 255, 255);
+    box-shadow: #d9d9d9 0px 1px 5px 1px;
+}
+
+.containerMainUser .containerContent .user:hover {
+    box-shadow: #d9d9d9 0px 2px 10px 2px;
+
+}
+
+.containerMainUser .containerContent .user .info {}
+
+.containerMainUser .containerContent .user .info * {
+    font-size: 8pt;
+    font-weight: 500;
+
+}
+
+.containerMainUser .containerContent .user .info .img {
+    width: 50px;
+    margin: auto;
+}
+
+.containerMainUser .containerContent .user .info .img img {
+    width: 100%;
+}
+
+.containerMainUser .containerContent .user .info {
+
+    display: grid;
+    justify-content: center;
+}
+
+.containerMainUser .containerContent .user .info .datas strong {
+    display: block;
+    text-align: center;
+    margin-bottom: 2px;
+
+}
+
+.containerMainUser .containerContent .user .info .datas .name_user {
+    font-weight: bolder;
+    color: rgb(19, 19, 19);
+
+}
+
+.containerMainUser .containerContent .user .info .datas .email_user {
+    font-weight: bolder;
+    color: rgb(85, 85, 85);
+
+
+
+}
+
+.containerMainUser .containerContent .user .info .datas .lastlogin_user {
+    color: #34d399;
+}
+
+
+
+
+
+
+
+
+
+
+
+.containerMainUser .containerContent .user .controllers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 3px;
+    border-radius: 5px;
+}
+
+.containerMainUser .containerContent .user .controllers button>svg {
+    font-size: 14pt;
+    font-weight: 900;
+}
+
+.containerMainUser .containerContent .user .controllers button {
+    border: none;
+
+    cursor: pointer;
+    background-color: transparent;
+
+
+}
+
+.containerMainUser .containerContent .user .controllers button.bgEditUser {
+
+    color: var(--c12);
+    border-radius: 5px;
+}
+
+.containerMainUser .containerContent .user .controllers button.bgDeleteUser {
+
+    color: var(--c14);
+    /*border: 1px solid var(--c14);*/
+    border-radius: 5px;
+}
+
+.containerMainUser .containerContent .user .controllers button.bgViewUser {
+
+    color: var(--c16);
+    /*border: 1px solid var(--c16);*/
+    border-radius: 5px;
+}
+
+/* Configuraçao para os cards de editar e cadastrar usuarios*/
+.containerEditar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #1a1a1a67;
+    display: none;
+}
+
+.containerEditar .cardFormEditar {
+    width: 500px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 5px #1a1a1a67;
+}
+.showDisplayTrueEdit{
+    display: block;
+}
+
+.containerVisualizar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #1a1a1a67;
+}
+
+.containerVisualizar .cardUser {
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #929292;
+}
+
+.containerVisualizar .cardUser .cardClose {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.showDisplayTrueVisualizar {
+    display: block;
+}
+
+.showDisplayFalseVisualizar {
+    display: none;
+}
+
+
+
+/*
+    Configuraçoes dos painel de cadastramanto do usuario
+*/
+.cardFormAdd {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: #1a1a1a67;
+
+}
+
+.showDisplayTrueAdd {
+    display: block;
+}
+
+.showDisplayFalseAdd {
+    display: none;
+}
+
+.cardFormAdd .cardAddUser {
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #929292;
+
+}
+
+.cardFormAdd .cardAddUser .cardClose {
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.cardFormAdd .cardAddUser .cardClose svg {
+    font-size: 15pt;
+}
+.cardFormAdd .cardAddUser form .controllerInput{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    gap: 10px;
+
+}
+.cardFormAdd .cardAddUser form .controllerInput label{
+
+}
+.cardFormAdd .cardAddUser form .controllerInput input{
+    border: none;
+    height: 30px;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 2px;
+}
+.cardFormAdd .cardAddUser form .controllerInput input[type="submit"]{
+    background-color: var(--c12);
+    color: #fff;
+    font-weight: 300;
+    margin: 10px auto
+    ;
+    width: 100%;
+    padding: 5px 10px;   
+}

@@ -1,0 +1,83 @@
+ 
+.containerMainDashboards {
+    width: 900px;
+    margin: auto;
+    
+}
+.containerMainDashboards>div{
+  
+    margin-bottom: 20px;
+}
+
+.containerMainDashboards .cards_resumes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    
+
+}
+
+.containerMainDashboards .cards_resumes .card {
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 3px;
+    height: 80px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: #d9d9d9 0px 2px 10px 2px;
+}
+
+.containerMainDashboards .cards_resumes .card h3 {
+    font-size: 12pt;
+    color: #a7a7a7;
+    font-weight: 500;
+    
+}
+.containerMainDashboards .cards_resumes .card strong{
+    color: #b8b8b8;
+    font-size: 9pt;
+    padding: 5px;
+    border-radius: 10px;
+    
+    display: inline-block;
+    margin: 5px;
+}
+.containerMainDashboards .cards_resumes .card .content_green{
+    background-color: #34d39918;
+    color: #34d399;
+   
+}
+.containerMainDashboards .cards_resumes .card .content_red{
+    background-color: #f8717127;
+    color: #f87171;
+}
+.containerMainDashboards .cards_charts{
+    display: grid;
+ 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.containerMainDashboards .cards_charts .card_chart{
+    
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: #d9d9d9 0px 2px 10px 2px;
+    border-radius: 3px;
+}
+.containerMainDashboards .cards_resumes_charts{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: #d9d9d9 0px 2px 10px 2px;
+    height: 200px;
+}
+.containerMainDashboards .cards_resumes_charts>.cards{
+    
+}
+.containerMainDashboards .cards_resumes_charts>.cards .card{
+    display: block;
+    margin: 5px auto;
+}
