@@ -47,12 +47,7 @@ export default function NavBarAdmin(){
                  
                     <Link to="/admin/history">
                         <span className="icon"><MdHistory/></span>
-                        <span className={style.txt}>Logs</span>
-                    </Link>
-                 
-                    <Link to="/admin/historyLogin">
-                        <span className="icon"><MdHistory/></span>
-                        <span className={style.txt}>Historicos</span>
+                        <span className={style.txt}>Historico</span>
                     </Link>
                     <Link to="/admin" onClick={()=>{
                         history.replaceState("/admin")

@@ -10,7 +10,7 @@ const LoginAdmin=()=>{
         <div className={style.bodyLogin}>
         <div className={style.containerLogin}>
        
-        {pages_anable[1]}
+        {pages_anable[0]}
     
         </div>
         </div >
