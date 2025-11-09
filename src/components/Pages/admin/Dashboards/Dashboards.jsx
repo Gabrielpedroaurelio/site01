@@ -41,7 +41,7 @@ return(
         <div className={style.cards_resumes_charts}>
             <div className={style.cards}>
                 <div className={style.card}>
-                    [Espaço Reservado]
+                    [Gráfico das Avaliações dos usuario em 1 á 5 extras]
                 </div>
                 <div className={style.card}>
                     [Espaço Reservado]
@@ -52,7 +52,11 @@ return(
             </div>
             <div className={style.cards}>
                 <div className={style.card}>
-                    [Espaço Reservado]
+                    [Total de commentario]
+                    <span>
+                        Commentarios positivos
+                    </span>
+                    <span>commentario nega</span>
                 </div>
                 <div className={style.card}>
                     [Espaço Reservado]

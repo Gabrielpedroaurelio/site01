@@ -276,8 +276,9 @@
     border: none;
     height: 30px;
     background-color: #f3f3f3;
+    border:1px solid #848484;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 .cardFormAdd .cardAddUser form .controllerInput input[type="submit"]{
     background-color: var(--c12);

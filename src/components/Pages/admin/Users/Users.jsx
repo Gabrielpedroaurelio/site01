@@ -6,6 +6,8 @@ import { FaClosedCaptioning, FaMagnifyingGlass, FaMessage, FaPersonCircleXmark, 
 import { MdAdd, MdClose, MdDelete, MdEdit, MdPreview, MdViewAgenda } from 'react-icons/md'
 import { TbRulerMeasure } from "react-icons/tb";
 import { useState } from "react";
+
+
 export default function Users(params) {
     const usuarios = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     const [showDisplayView, setShowDisplay] = useState(false);
@@ -41,7 +43,7 @@ export default function Users(params) {
         }
 
     }
-    return (
+    return(
         <>
             <NavBarAdmin></NavBarAdmin>
             <SideBarAdmin></SideBarAdmin>
@@ -119,7 +121,7 @@ export default function Users(params) {
                                 <input type="password" name="password_user" id="password_user" placeholder="Palavra Passe"/>
                             </div>
                             <div className={style.controllerInput}>
-                                <label htmlFor="phone_user">Nome do Usuario</label>
+                                <label htmlFor="phone_user">Telefone</label>
                                 <input type="tel" name="phone_user" id="phone_user" placeholder="Telefone"/>
                             </div>
                             <div className={style.controllerInput}>

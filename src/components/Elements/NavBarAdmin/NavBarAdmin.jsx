@@ -1,4 +1,4 @@
-import {MdHome, MdHistory, MdStorage,MdSignLanguage, MdLogout} from 'react-icons/md'
+import {MdHome, MdHistory, MdStorage,MdSignLanguage, MdLogout, MdSettings} from 'react-icons/md'
 import {FaUsers, FaMagnifyingGlass,FaStore} from 'react-icons/fa6'
 import style from './NavBarAdmin.module.css'
 import favicon from '../../../assets/_images/favicon.png'
@@ -49,6 +49,20 @@ export default function NavBarAdmin(){
                         <span className="icon"><MdHistory/></span>
                         <span className={style.txt}>Historico</span>
                     </Link>
+                          <Link to="/admin/history">
+                        <span className="icon"><MdSettings/></span>
+                        <span className={style.txt}>Definições</span>
+                    </Link>
+                      <Link to="/admin/accout" className={style.btnUserAccount}>
+                        <span className={style.icon}> 
+                            <img src={favicon} alt="" width="20"/> </span>
+                        <span className={style.txt}>
+                            <span>Gabriel Pedro Aurelio</span>
+                            <span>gabrielpedroaurelio@gmail.com</span>
+                        </span>
+                    </Link>
+                 
+                 
                     <Link to="/admin" onClick={()=>{
                         history.replaceState("/admin")
                     }}>
