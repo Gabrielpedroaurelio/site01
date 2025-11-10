@@ -10,9 +10,8 @@
     display: flex;
     justify-content: flex-end;
     max-width: 900px;
-    min-width: 350px;
+    min-width: 300px;
     margin: auto;
-
 }
 
 .containerMainUser .containerControles button {
@@ -23,13 +22,13 @@
     font-weight: bold;
     border-radius: 2px;
     cursor: pointer;
-    box-shadow: 0px 3px 3px #313131;
+    box-shadow: 0px 3px 3px #c9c8c8;
     display: flex;
     align-items: center;
 }
 
 .containerMainUser .containerControles button svg {
-    font-size: 15pt;
+
 }
 
 .containerMainUser .containerContent {
@@ -53,7 +52,6 @@
 
 .containerMainUser .containerContent .user:hover {
     box-shadow: #d9d9d9 0px 2px 10px 2px;
-
 }
 
 .containerMainUser .containerContent .user .info {}
@@ -61,7 +59,6 @@
 .containerMainUser .containerContent .user .info * {
     font-size: 8pt;
     font-weight: 500;
-
 }
 
 .containerMainUser .containerContent .user .info .img {
@@ -74,7 +71,6 @@
 }
 
 .containerMainUser .containerContent .user .info {
-
     display: grid;
     justify-content: center;
 }
@@ -83,36 +79,21 @@
     display: block;
     text-align: center;
     margin-bottom: 2px;
-
 }
 
 .containerMainUser .containerContent .user .info .datas .name_user {
     font-weight: bolder;
     color: rgb(19, 19, 19);
-
 }
 
 .containerMainUser .containerContent .user .info .datas .email_user {
     font-weight: bolder;
     color: rgb(85, 85, 85);
-
-
-
 }
 
 .containerMainUser .containerContent .user .info .datas .lastlogin_user {
     color: #34d399;
 }
-
-
-
-
-
-
-
-
-
-
 
 .containerMainUser .containerContent .user .controllers {
     display: grid;
@@ -122,9 +103,15 @@
     border-radius: 5px;
 }
 
+.containerMainUser .containerContent .user .controllers button {
+    
+}
+
 .containerMainUser .containerContent .user .controllers button>svg {
     font-size: 14pt;
+    color: #fff;
     font-weight: 900;
+
 }
 
 .containerMainUser .containerContent .user .controllers button {
@@ -138,20 +125,20 @@
 
 .containerMainUser .containerContent .user .controllers button.bgEditUser {
 
-    color: var(--c12);
+    background-color: #23bd84;
     border-radius: 5px;
 }
 
 .containerMainUser .containerContent .user .controllers button.bgDeleteUser {
 
-    color: var(--c14);
+    background-color: var(--c14);
     /*border: 1px solid var(--c14);*/
     border-radius: 5px;
 }
 
 .containerMainUser .containerContent .user .controllers button.bgViewUser {
 
-    color: var(--c16);
+    background-color: var(--c16);
     /*border: 1px solid var(--c16);*/
     border-radius: 5px;
 }
@@ -178,7 +165,8 @@
     transform: translateX(-50%);
     box-shadow: 0px 0px 5px #1a1a1a67;
 }
-.showDisplayTrueEdit{
+
+.showDisplayTrueEdit {
     display: block;
 }
 
@@ -262,29 +250,30 @@
 .cardFormAdd .cardAddUser .cardClose svg {
     font-size: 15pt;
 }
-.cardFormAdd .cardAddUser form .controllerInput{
+
+.cardFormAdd .cardAddUser form .controllerInput {
     display: grid;
     width: 90%;
     margin: auto;
     gap: 10px;
 
 }
-.cardFormAdd .cardAddUser form .controllerInput label{
 
-}
-.cardFormAdd .cardAddUser form .controllerInput input{
+.cardFormAdd .cardAddUser form .controllerInput label {}
+
+.cardFormAdd .cardAddUser form .controllerInput input {
     border: none;
     height: 30px;
     background-color: #f3f3f3;
     padding: 10px;
     border-radius: 2px;
 }
-.cardFormAdd .cardAddUser form .controllerInput input[type="submit"]{
+
+.cardFormAdd .cardAddUser form .controllerInput input[type="submit"] {
     background-color: var(--c12);
     color: #fff;
     font-weight: 300;
-    margin: 10px auto
-    ;
+    margin: 10px auto;
     width: 100%;
-    padding: 5px 10px;   
+    padding: 5px 10px;
 }
