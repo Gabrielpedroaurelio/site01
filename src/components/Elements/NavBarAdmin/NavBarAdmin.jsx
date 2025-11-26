@@ -1,9 +1,12 @@
 import {MdHome, MdHistory, MdStorage,MdSignLanguage, MdLogout, MdSettings} from 'react-icons/md'
+import { FiShield } from "react-icons/fi";
+
 import {FaUsers, FaMagnifyingGlass,FaStore} from 'react-icons/fa6'
 import style from './NavBarAdmin.module.css'
 import favicon from '../../../assets/_images/favicon.png'
 import { Link } from 'react-router-dom'
 import {useState} from "react"
+
 export default function NavBarAdmin(){
    const [MenuExpandir,setMenuExpandir]=useState(false)
    let Observador=MenuExpandir
@@ -36,7 +39,7 @@ export default function NavBarAdmin(){
                         <span className="icon"><FaUsers/></span>
                         <span className={style.txt}>Usuários</span>
                     </Link>
-                    <Link to="/admin/enterprises" >
+                    <Link to="/admin/enterprise" >
                         <span className="icon"><MdStorage/></span>
                         <span className={style.txt}>Empresas</span>
                     </Link>
@@ -44,7 +47,7 @@ export default function NavBarAdmin(){
                     <span className="icon"><MdSignLanguage/></span>
                         <span className={style.txt}>Sinais</span>
                     </Link>
-                 
+                  
                     <Link to="/admin/history">
                         <span className="icon"><MdHistory/></span>
                         <span className={style.txt}>Historico</span>
@@ -53,7 +56,7 @@ export default function NavBarAdmin(){
                         <span className="icon"><MdSettings/></span>
                         <span className={style.txt}>Definições</span>
                     </Link>
-                      <Link to="/admin/accout" className={style.btnUserAccount}>
+                      <Link to="/admin/account" className={style.btnUserAccount}>
                         <span className={style.icon}> 
                             <img src={favicon} alt="" width="20"/> </span>
                         <span className={style.txt}>

@@ -2,7 +2,9 @@ import { useState } from 'react';
 import logotipo from '../../../assets/_images/favicon.png'
 const LoginAdminData = ({ style }) => {
   const [showTitle, setShowTitle] = useState(false);
+ 
   const obseverTitle = showTitle
+ 
   function ShowTitle(params) {
     if (obseverTitle) {
       setShowTitle(false)
@@ -12,6 +14,7 @@ const LoginAdminData = ({ style }) => {
     }
 
   }
+
   // Codigo para o login
   function Login(e) {
     e.preventDefault();
@@ -25,7 +28,8 @@ const LoginAdminData = ({ style }) => {
   return (
     <>
       <div className={style.form} onLoad={() => {
-        
+      
+         
           ShowTitle()
       }}>
         <div className={style.cardImg}>

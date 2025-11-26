@@ -4,26 +4,44 @@
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: #ffffff;
+    background-color: #e8e9e9;
 
 }
 
 .containerLogin {
 
-    width: 800px;
+ width: 800px;
+ 
     height: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+
+    transform: translate(-50%, -200%);
 
     border-radius: 5px;
     background-color: #fff;
     display: grid;
     grid-template-columns: 60% 40%;
     overflow: hidden;
-    box-shadow: 0px 0px 20px #818181;
+    box-shadow:  #bbbdbf 5px 10px 20px 0px;
+transition: all .9s ease-in-out;
+}
+.LoginEffect{
+    left: 50%;
+    top: 50%;
 
+    transform: translate(-50%, -50%);
+}
+
+/*
+Falta colocar efeitos
+
+
+*/
+.showLogin{
+ 
+    transform: translate(-50%, -50%);
 }
 
 .bodyLogin .containerLogin .info {
@@ -54,6 +72,7 @@
     margin: auto;
     position: relative;
     height: 70px;
+    width: 100%;
 }
 
 .bodyLogin .containerLogin .controlerInput label {

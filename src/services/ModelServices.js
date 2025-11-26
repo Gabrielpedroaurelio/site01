@@ -1,14 +1,28 @@
-import { GetRequest, PostRequest, PutRequest, DeleteRequest } from './requests';
+import { GetRequest, PostRequest, PuteRequest, DeleteRequest } from './resquests';
 
 /**
  * Função genérica para criar um registro
  */
 export async function createRecord(url, data) {
-  // Se for um form, transforme em JSON
-  const body = data instanceof FormData ? Object.fromEntries(data) : data;
-  const response = await PostRequest(url, body);
+ 
+  const response = await PostRequest(url, data);
   console.log(response);
   return response;
+}
+
+// FUNCAO GENERICA PARA UPLOAD DE ARQUIVOS
+// Função para enviar arquivo para o backend
+export async function uploadFileFrontend(url, file) {
+    const formData = new FormData();
+    formData.append("file", file); // 'file' deve ser igual ao nome do campo no backend
+
+    const res = await fetch(url, {
+        method: "POST",
+        body: formData
+    });
+
+    if (!res.ok) throw new Error(`Falha no upload: ${res.statusText}`);
+    return await res.json(); // {sucesso, filename, path}
 }
 
 /**
@@ -16,7 +30,7 @@ export async function createRecord(url, data) {
  */
 export async function listRecords(url) {
   const response = await GetRequest(url);
-  console.log(response);
+ console.log(response);
   return response;
 }
 
@@ -25,7 +39,7 @@ export async function listRecords(url) {
  */
 export async function updateRecord(url, data) {
   const body = data instanceof FormData ? Object.fromEntries(data) : data;
-  const response = await PutRequest(url, body);
+  const response = await PuteRequest(url, body);
   console.log(response);
   return response;
 }

@@ -1,0 +1,9 @@
+@import url(../../../assets/_css/includes/includes.cores-fonte.css);
+.ParagrafoErro{
+    background-color: var(--bg-error);
+    color: var(--txt-error);
+
+    padding: 5px;
+    margin: 5px auto;
+    
+}

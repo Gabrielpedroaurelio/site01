@@ -1,22 +1,21 @@
 export async function PostRequest(url, content) {
-    const Options = {
-        header: "application/json",
-        body: content,
-        method: "post"
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(content)
+    };
+
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+        console.log(`Failed Request ... \n Error: ${response.statusText}`);
+    } else {
+        return await response.json();
     }
-    const resquest = await fetch(url, Options)
-    if (!resquest.ok) {
-        console.log(`Falied Request ... \n Error: ${resquest.statusText}`);
-
-
-    }
-    else {
-        const returns_request = await resquest.json()
-        return returns_request;
-
-    }
-
 }
+
 export async function GetRequest(url) {
 
     const resquest = await fetch(url)
@@ -34,9 +33,10 @@ export async function GetRequest(url) {
 }
 export async function PuteRequest(url,content) {
     const Options = {
-        headers: "application/json",
+        headers: { "Content-Type": "application/json" },
+
         body: content,
-        methods: "pute"
+        method: "put"
     }
     const resquest = await fetch(url, Options)
     if (!resquest.ok) {
@@ -53,7 +53,8 @@ export async function PuteRequest(url,content) {
 }
 export async function DeleteRequest(url,) {
     const Options = {
-        headers: "application/json",
+        headers: { "Content-Type": "application/json" }
+,
         methods: "delete"
     }
     const resquest = await fetch(url, Options)

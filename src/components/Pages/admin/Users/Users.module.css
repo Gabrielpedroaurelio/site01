@@ -1,9 +1,7 @@
 @import url(../../../../assets/_css/includes/includes.cores-fonte.css);
 
 .containerMainUser {
-
     margin-left: 80px;
-
 }
 
 .containerMainUser .containerControles {
@@ -18,13 +16,14 @@
 .containerMainUser .containerControles button {
     border: none;
     color: #fff;
-    background-color: #34d399;
+    background-color: #00588f;
     padding: 5px 10px;
     font-weight: bold;
     border-radius: 2px;
     cursor: pointer;
-    box-shadow: 0px 3px 3px #313131;
+    box-shadow: 0px 3px 3px #c6c6c6;
     display: flex;
+    margin-right: 10px;
     align-items: center;
 }
 
@@ -40,15 +39,17 @@
 }
 
 .containerMainUser .containerContent .user {
-    width: 150px;
+    width: 250px;
+    height: 100px;
     border-radius: 5px;
-    height: 150px;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 5px;
     box-sizing: border-box;
     transition: all .2s ease-in;
     background-color: rgb(255, 255, 255);
     box-shadow: #d9d9d9 0px 1px 5px 1px;
+    display: grid;
+    grid-template-columns: 70% 30%;
 }
 
 .containerMainUser .containerContent .user:hover {
@@ -56,236 +57,196 @@
 
 }
 
-.containerMainUser .containerContent .user .info {}
-
-.containerMainUser .containerContent .user .info * {
-    font-size: 8pt;
-    font-weight: 500;
-
-}
-
-.containerMainUser .containerContent .user .info .img {
-    width: 50px;
-    margin: auto;
-}
-
-.containerMainUser .containerContent .user .info .img img {
-    width: 100%;
-}
-
 .containerMainUser .containerContent .user .info {
 
-    display: grid;
+    display: flex;
     justify-content: center;
+    align-items: center;
+
+
 }
 
-.containerMainUser .containerContent .user .info .datas strong {
+.containerMainUser .containerContent .user .info>div {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+}
+
+.containerMainUser .containerContent .user .info>div .img {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.containerMainUser .containerContent .user .info>div .datas {
+
+    width: 100%;
+    align-self: center;
+    padding-left: 5px;
+
+}
+
+.containerMainUser .containerContent .user .info>div .datas span {
     display: block;
-    text-align: center;
-    margin-bottom: 2px;
+}
+
+.containerMainUser .containerContent .user .info>div .datas .nome_user {
+    font-weight: 600;
+    font-size: 8pt;
 
 }
 
-.containerMainUser .containerContent .user .info .datas .name_user {
-    font-weight: bolder;
-    color: rgb(19, 19, 19);
+.containerMainUser .containerContent .user .info>div .datas .email_user {
+    font-size: 9px;
 
 }
 
-.containerMainUser .containerContent .user .info .datas .email_user {
-    font-weight: bolder;
-    color: rgb(85, 85, 85);
-
-
-
-}
-
-.containerMainUser .containerContent .user .info .datas .lastlogin_user {
-    color: #34d399;
-}
-
-
-
-
-
-
-
-
-
-
-
-.containerMainUser .containerContent .user .controllers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 3px;
-    border-radius: 5px;
-}
-
-.containerMainUser .containerContent .user .controllers button>svg {
-    font-size: 14pt;
-    font-weight: 900;
-}
-
-.containerMainUser .containerContent .user .controllers button {
+.containerMainUser .containerContent .user .info>div .datas button {
     border: none;
+    cursor: pointer;
+    background-color: #00bea2;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
 
+.containerMainUser .containerContent .user .info>div .datas button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 10px;
+}
+
+.containerMainUser .containerContent .user .controller {}
+
+.containerMainUser .containerContent .user .controller strong {
+    border: 1px solid var(--c12);
+    font-size: 10px;
+    border-radius: 5px;
+    width: 40px;
+    margin: auto;
+    padding: 3px 5px;
+    display: block;
+    background-color: var(--c11);
+
+}
+
+.containerMainUser .containerContent .user .controller button {
+    border: 1px solid #00588f;
+    color: #ffffff;
+    border-radius: 90px;
+    display: block;
+    margin: 2px auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: transparent;
-
-
 }
 
-.containerMainUser .containerContent .user .controllers button.bgEditUser {
-
-    color: var(--c12);
-    border-radius: 5px;
-}
-
-.containerMainUser .containerContent .user .controllers button.bgDeleteUser {
-
-    color: var(--c14);
-    /*border: 1px solid var(--c14);*/
-    border-radius: 5px;
-}
-
-.containerMainUser .containerContent .user .controllers button.bgViewUser {
-
-    color: var(--c16);
-    /*border: 1px solid var(--c16);*/
-    border-radius: 5px;
-}
-
-/* Configuraçao para os cards de editar e cadastrar usuarios*/
-.containerEditar {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    background-color: #1a1a1a67;
-    display: none;
-}
-
-.containerEditar .cardFormEditar {
-    width: 500px;
-    height: 350px;
-    border-radius: 5px;
-    background-color: #fff;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0px 0px 5px #1a1a1a67;
-}
-.showDisplayTrueEdit{
-    display: block;
-}
-
+.containerEditar,
 .containerVisualizar {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: fixed;
     top: 0px;
-    background-color: #1a1a1a67;
+    right: 0px;
+    transition: width .4s ease-in-out;
+    background-color: #ffffff;
+    height: 100vh;
+    box-shadow: 0px 0px 10px #c6c6c6;
 }
 
-.containerVisualizar .cardUser {
-    width: 400px;
-    height: 500px;
-    background-color: #fff;
-    position: absolute;
+.showDisplayTrueEdit,
+.showDisplayTrueVisualizar {
+    padding: 10px;
+    width: 500px;
+}
+
+.containerVisualizar .cardClose, .containerAdd .cardClose,.containerEditar .cardClose{
+    display: flex;
+    justify-content: flex-end;
+}
+ 
+.containerVisualizar .cardClose svg {
+    cursor: pointer;
+    font-size: 20pt;
+}
+
+/*
+Painel Adicionar Usuario
+*/
+.containerAdd {
+    overflow: hidden;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #929292;
-}
+    width: 0vw;
+    height: 0px;
+    background-color: #00000045;
+    z-index: 1;
 
-.containerVisualizar .cardUser .cardClose {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-}
-
-.showDisplayTrueVisualizar {
-    display: block;
-}
-
-.showDisplayFalseVisualizar {
-    display: none;
-}
-
-
-
-/*
-    Configuraçoes dos painel de cadastramanto do usuario
-*/
-.cardFormAdd {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    background-color: #1a1a1a67;
-
+    transition: all .5s ease-in-out;
 }
 
 .showDisplayTrueAdd {
-    display: block;
+    background-color: #00000077;
+    width: 100vw;
+
+    height: 100vh;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
 }
 
-.showDisplayFalseAdd {
-    display: none;
-}
-
-.cardFormAdd .cardAddUser {
-    width: 400px;
-    height: 500px;
+.containerAdd .cardFormAdd {
     background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 30px #6d6d6df6;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #929292;
-
 }
-
-.cardFormAdd .cardAddUser .cardClose {
-    display: flex;
-    padding: 10px;
-    justify-content: flex-end;
-}
-
-.cardFormAdd .cardAddUser .cardClose svg {
-    font-size: 15pt;
-}
-.cardFormAdd .cardAddUser form .controllerInput{
-    display: grid;
-    width: 90%;
+ .containerAdd .cardFormAdd div h2{
+    font-size: 18pt;
+    text-align: center;
+ }
+.containerAdd .cardFormAdd .controllerInput {
+    display:grid;
+    width: 80%;
     margin: auto;
-    gap: 10px;
+    padding: 0px;
+}
+ .containerAdd .cardFormAdd .controllerInput input[type="submit"]{
 
-}
-.cardFormAdd .cardAddUser form .controllerInput label{
-
-}
-.cardFormAdd .cardAddUser form .controllerInput input{
-    border: none;
-    height: 30px;
-    background-color: #f3f3f3;
-    border:1px solid #848484;
-    padding: 10px;
-    border-radius: 5px;
-}
-.cardFormAdd .cardAddUser form .controllerInput input[type="submit"]{
-    background-color: var(--c12);
+    background-color: #00588f;
     color: #fff;
-    font-weight: 300;
-    margin: 10px auto
-    ;
-    width: 100%;
-    padding: 5px 10px;   
+    width: 80%;
+    margin: auto;
+    font-size: 12pt;
+    padding: 10px;
+}
+.containerAdd .cardFormAdd .controllerInput input,.containerAdd .cardFormAdd .controllerInput select{
+    border: 1px solid #6d6d6df6;
+    box-shadow: 0px 0px 0px #6d6d6df6;
+    outline: none;
+    padding:5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    
+}
+.containerAdd .cardFormAdd .controllerInput input:focus,.containerAdd .cardFormAdd .controllerInput select:focus{
+    box-shadow: 0px 0px 3px #6d6d6df6;
+}
+.containerAdd .cardFormAdd .controllerInput label{
+    margin-bottom: 5px;
+    font-size: 10pt;
 }
