@@ -2,8 +2,13 @@
 .ParagrafoErro{
     background-color: var(--bg-error);
     color: var(--txt-error);
+    border-radius: 5px;
+ 
 
-    padding: 5px;
-    margin: 5px auto;
-    
+    display: flex;
+    align-items: center;
+    width: max-content  ;
+ 
+    margin: 5px auto 0px auto;
+
 }

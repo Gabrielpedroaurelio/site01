@@ -5,7 +5,7 @@ import NavBarAdmin from "../../../Elements/NavBarAdmin/NavBarAdmin";
 import SideBarAdmin from "../../../Elements/SideBarAdmin/SideBarAdmin";
 import pessoa from '../../../../assets/_images/people01.png';
 import style from './Users.module.css';
-import { createRecord, listRecords } from '../../../../services/ModelServices';
+import { createRecord, listRecords, uploadFileFrontend } from '../../../../services/ModelServices';
 import { FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FiShield, FiShieldOff } from "react-icons/fi";
@@ -20,6 +20,8 @@ export default function Users() {
   const [showEdit, setShowEdit] = useState(false);
   const [showView, setShowView] = useState(false);
   const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
+  const [file, setFile] = useState(null);
+  const [uploadStatus, setUploadStatus] = useState("");
   const URLs = 'http://127.7.6.4:3000/';
 
   // Carregar usuários
@@ -27,24 +29,22 @@ export default function Users() {
     (async () => {
       console.log("Carregando usuários...");
       const res = await listRecords(URLs + "user");
-      if (res.user.sucesso) {
-        console.log(res.user.usuario.msm);
-
+      if (res && res.user && res.user.sucesso) {
+        console.log(res.user.msm);
         setUsuarios([...res.user.usuario]);
-        //console.log("Usuários carregados:", res.dados);
       } else {
-        // console.error("Erro ao buscar usuários:", res.erro);
+        // console.error("Erro ao buscar usuários:", res?.erro);
       }
     })();
   }, []);
-  // Carregar Perfi
+  // Carregar Perfil
   useEffect(() => {
     (async () => {
       console.log("Carregando perfis...");
       const res = await listRecords(URLs + "perfil");
-      setPerfis([...res.datas.perfis])
-      console.log(res);
-
+      if (res && res.datas && res.datas.perfis) {
+        setPerfis([...res.datas.perfis]);
+      }
     })();
   }, []);
 
@@ -61,8 +61,29 @@ export default function Users() {
 
   async function CadastrarUsuario(data) {
     console.log(data);
-    
-    const response = await createRecord(URLs + "user", data);
+    let payload = { ...data };
+
+    // Se houver arquivo selecionado, faz upload antes
+    if (file) {
+      try {
+        setUploadStatus("Enviando imagem...");
+        const uploadResponse = await uploadFileFrontend(URLs + "upload", file);
+        if (uploadResponse && uploadResponse.sucesso) {
+          payload = {
+            ...payload,
+            path_img: uploadResponse.path,
+          };
+          setUploadStatus("Imagem enviada com sucesso!");
+        } else {
+          setUploadStatus("Falha ao enviar imagem.");
+        }
+      } catch (error) {
+        console.error(error);
+        setUploadStatus("Erro no upload da imagem.");
+      }
+    }
+
+    const response = await createRecord(URLs + "user", payload);
     console.log("Resposta do servidor:", response);
   }
 
@@ -136,8 +157,10 @@ export default function Users() {
               })} />
               {
 
-                errors && (
-                <ParagrafoErro error={errors.email?.message}/>
+                errors? (
+                <ParagrafoErro error={errors.nome_completo?.message}/>
+                ):(
+                  <span></span>
                 )
               }
             </div>
@@ -146,6 +169,15 @@ export default function Users() {
               <input type="email" name="email" {...register("email", {
                 required: "Este campo é obrigatorio"
               })} />
+                            {
+
+                errors? (
+                <ParagrafoErro error={errors.email?.message}/>
+                ):(
+                  <span></span>
+                )
+              }
+
             </div>
             <div className={style.controllerInput}>
               <label htmlFor="perfil">Tipo de Usuario</label>
@@ -154,7 +186,7 @@ export default function Users() {
               })}>
                 {
                   perfis.map((perfil) => (
-                      <option value={perfil.id_perfil}>{perfil
+                      <option value={perfil.id_perfil} key={perfil.id_perfil}>{perfil
                       .nome}</option>
                   ))
 
@@ -166,12 +198,46 @@ export default function Users() {
               <input type="password" name="senha_hash" {...register("senha_hash", {
                 required: "Este campo é obrigatorio"
               })} />
+                          {
+
+                errors? (
+                <ParagrafoErro error={errors.senha_hash?.message}/>
+                ):(
+                  <span></span>
+                )
+              }
+
             </div>
             <div className={style.controllerInput}>
               <label htmlFor="telefone">Telefone</label>
               <input type="tel" name="telefone" {...register("telefone", {
                 required: "Este campo é obrigatorio"
               })} />
+                          {
+
+                errors? (
+                <ParagrafoErro error={errors.telefone?.message}/>
+                ):(
+                  <span></span>
+                )
+              }
+
+            </div>
+            <div className={style.controllerInput}>
+              <label htmlFor="avatar">Foto (opcional)</label>
+              <input
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={(e) => {
+                  const selected = e.target.files && e.target.files[0];
+                  setFile(selected || null);
+                  setUploadStatus("");
+                }}
+              />
+              {uploadStatus && (
+                <small className={style.uploadStatus}>{uploadStatus}</small>
+              )}
             </div>
             <div className={style.controllerInput}>
               <input type="submit" value="Adicionar" />
