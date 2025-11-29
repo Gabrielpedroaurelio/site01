@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .TableHistoryLogin {
 
     padding: 10px;
@@ -5,6 +6,15 @@
     box-shadow: 2px 2px 5px #c3c3c3;
 
 
+=======
+
+.TableHistoryLogin{
+    
+    padding: 10px;box-sizing: border-box;
+    box-shadow:  2px 2px 5px #c3c3c3;
+ 
+    
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }
 
 .TableHistoryLogin h3 {
@@ -13,17 +23,29 @@
     color: #343434;
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 
 
 .TableHistoryLogin .TableBodyLogin {}
 
 .TableHistoryLogin .TableBodyLogin>div {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: 10% 40% 25% 25%;
 
     margin: 5px auto;
     padding: 10px;
     border-radius: 5px;
+=======
+    grid-template-columns: repeat(3,1fr);
+  
+    margin: 3px;
+    padding: 5px;
+    border-radius: 3px;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
     box-shadow: 1px 1px 3px #dcdcdc;
     background-color: #fff;
 
@@ -35,6 +57,7 @@
     display: grid;
     
 }
+<<<<<<< HEAD
 .img img{
 width: 50px;
 height: 50px;
@@ -71,11 +94,46 @@ height: 50px;
 
 }
 
+=======
+
+.TableHistoryLogin .TableBodyLogin>div .userinfo{
+    display: grid;
+}
+.userinfo span{
+    font-weight: 500;
+    
+}
+.userinfo span:nth-child(2n){
+    font-size: 8pt;
+}
+.hostinfo{
+    display: grid;
+    grid-template-rows: repeat(3 ,1fr);
+    gap: 5px;
+}
+.hostinfo button{
+background-color: #ff1f1f;
+color: #fff;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+width: 200px;
+margin: auto;
+
+border-radius: 3px;
+}
+.hostinfo strong{
+    font-family: monospace;
+    font-size: 14pt;
+
+}
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 .sessioninfo {
     display: grid;
     gap: 5px;
     align-items: center;
 }
+<<<<<<< HEAD
 
 .sessioninfo span {
     font-weight: 500;
@@ -95,4 +153,11 @@ height: 50px;
 .sessioninfo .out {
  
     color: var(--c14);
+=======
+.sessioninfo span{
+    font-weight: 500;
+    font-variant: small-caps;
+    font-size: 9pt;
+
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }

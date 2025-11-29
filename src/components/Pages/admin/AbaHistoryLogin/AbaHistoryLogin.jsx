@@ -18,9 +18,12 @@ export default function AbaHistoryLogin() {
                         lista.map((item) => (
 
                             <div key={item}>
+<<<<<<< HEAD
                                 <div className={style.img}>
                                     <img src={pessoa} alt="" />
                                 </div>
+=======
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
                                 <div className={style.userinfo}>
                                     <span>
                                         Gabriel Pedro Aureli
@@ -37,6 +40,7 @@ export default function AbaHistoryLogin() {
                                     <strong>Desktop</strong>
                                     <strong>Google Chrome</strong>
 
+<<<<<<< HEAD
                                
                                 </div>
                                 <div className={style.sessioninfo}>
@@ -45,6 +49,17 @@ export default function AbaHistoryLogin() {
                                     </span>
                                     <span className={style.out}>
                                         Saíu :19-09-2025 22:00:02
+=======
+                                    <button>Rastrear Actividade</button>
+
+                                </div>
+                                <div className={style.sessioninfo}>
+                                    <span>
+                                        Iniciou Sessão:19-09-2025 22:00:02
+                                    </span>
+                                    <span>
+                                        Terminou Sessão:19-09-2025 22:00:02
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
                                     </span>
                                 </div>
                                

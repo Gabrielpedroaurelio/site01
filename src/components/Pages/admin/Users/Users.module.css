@@ -8,9 +8,15 @@
 .containerMainUser .containerControles {
     display: flex;
     justify-content: flex-end;
+<<<<<<< HEAD
     max-width: 1040px;
     min-width: 350px;
     margin: 0 auto 16px auto;
+=======
+    max-width: 900px;
+    min-width: 300px;
+    margin: auto;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }
 
 .containerMainUser .containerControles button {
@@ -21,7 +27,11 @@
     font-weight: 500;
     border-radius: 999px;
     cursor: pointer;
+<<<<<<< HEAD
     box-shadow: 0px 10px 25px rgba(15, 23, 42, 0.15);
+=======
+    box-shadow: 0px 3px 3px #c9c8c8;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
     display: flex;
     margin-right: 10px;
     align-items: center;
@@ -30,7 +40,11 @@
 }
 
 .containerMainUser .containerControles button svg {
+<<<<<<< HEAD
     font-size: 16px;
+=======
+
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }
 
 .containerMainUser .containerContent {
@@ -57,6 +71,7 @@
 }
 
 .containerMainUser .containerContent .user:hover {
+<<<<<<< HEAD
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
     transform: translateY(-2px);
 }
@@ -64,6 +79,29 @@
 .containerMainUser .containerContent .user .info {
 
     display: flex;
+=======
+    box-shadow: #d9d9d9 0px 2px 10px 2px;
+}
+
+.containerMainUser .containerContent .user .info {}
+
+.containerMainUser .containerContent .user .info * {
+    font-size: 8pt;
+    font-weight: 500;
+}
+
+.containerMainUser .containerContent .user .info .img {
+    width: 50px;
+    margin: auto;
+}
+
+.containerMainUser .containerContent .user .info .img img {
+    width: 100%;
+}
+
+.containerMainUser .containerContent .user .info {
+    display: grid;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
     justify-content: center;
     align-items: center;
 
@@ -95,6 +133,7 @@
 
 .containerMainUser .containerContent .user .info>div .datas span {
     display: block;
+<<<<<<< HEAD
 }
 
 .containerMainUser .containerContent .user .info>div .datas .nome_user {
@@ -109,6 +148,46 @@
 }
 
 .containerMainUser .containerContent .user .info>div .datas button {
+=======
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.containerMainUser .containerContent .user .info .datas .name_user {
+    font-weight: bolder;
+    color: rgb(19, 19, 19);
+}
+
+.containerMainUser .containerContent .user .info .datas .email_user {
+    font-weight: bolder;
+    color: rgb(85, 85, 85);
+}
+
+.containerMainUser .containerContent .user .info .datas .lastlogin_user {
+    color: #34d399;
+}
+
+.containerMainUser .containerContent .user .controllers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 3px;
+    border-radius: 5px;
+}
+
+.containerMainUser .containerContent .user .controllers button {
+    
+}
+
+.containerMainUser .containerContent .user .controllers button>svg {
+    font-size: 14pt;
+    color: #fff;
+    font-weight: 900;
+
+}
+
+.containerMainUser .containerContent .user .controllers button {
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
     border: none;
     cursor: pointer;
     background-color: #e0f2fe;
@@ -117,15 +196,23 @@
     margin-top: 6px;
 }
 
+<<<<<<< HEAD
 .containerMainUser .containerContent .user .info>div .datas button a {
     text-decoration: none;
     color: #0369a1;
     font-size: 10px;
     font-weight: 500;
+=======
+.containerMainUser .containerContent .user .controllers button.bgEditUser {
+
+    background-color: #23bd84;
+    border-radius: 5px;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }
 
 .containerMainUser .containerContent .user .controller {}
 
+<<<<<<< HEAD
 .containerMainUser .containerContent .user .controller strong {
     border: 1px solid var(--c12);
     font-size: 10px;
@@ -133,6 +220,44 @@
     min-width: 48px;
     margin: auto;
     padding: 3px 6px;
+=======
+    background-color: var(--c14);
+    /*border: 1px solid var(--c14);*/
+    border-radius: 5px;
+}
+
+.containerMainUser .containerContent .user .controllers button.bgViewUser {
+
+    background-color: var(--c16);
+    /*border: 1px solid var(--c16);*/
+    border-radius: 5px;
+}
+
+/* Configuraçao para os cards de editar e cadastrar usuarios*/
+.containerEditar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #1a1a1a67;
+    display: none;
+}
+
+.containerEditar .cardFormEditar {
+    width: 500px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 5px #1a1a1a67;
+}
+
+.showDisplayTrueEdit {
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
     display: block;
     background-color: var(--c11);
     text-align: center;
@@ -239,6 +364,7 @@ Painel Adicionar Usuario
 }
  .containerAdd .cardFormAdd .controllerInput input[type="submit"]{
 
+<<<<<<< HEAD
     background: linear-gradient(135deg, var(--c1), var(--c2));
     color: #fff;
     width: 80%;
@@ -289,4 +415,43 @@ Painel Adicionar Usuario
         width: 100%;
         max-width: 360px;
     }
+=======
+}
+
+.cardFormAdd .cardAddUser .cardClose {
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.cardFormAdd .cardAddUser .cardClose svg {
+    font-size: 15pt;
+}
+
+.cardFormAdd .cardAddUser form .controllerInput {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    gap: 10px;
+
+}
+
+.cardFormAdd .cardAddUser form .controllerInput label {}
+
+.cardFormAdd .cardAddUser form .controllerInput input {
+    border: none;
+    height: 30px;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.cardFormAdd .cardAddUser form .controllerInput input[type="submit"] {
+    background-color: var(--c12);
+    color: #fff;
+    font-weight: 300;
+    margin: 10px auto;
+    width: 100%;
+    padding: 5px 10px;
+>>>>>>> 38f32b56e80717758984bf0f7219eeeb9264e8ad
 }
