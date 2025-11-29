@@ -1,7 +1,7 @@
 import { FiUser, FiShield } from "react-icons/fi";
 import style from "./UserPermissions.module.css";
 import { useEffect, useMemo, useState } from "react";
-import { listRecords, createRecord, deleteRecord } from "../../../services/ModelServices";
+import { listRecords, createRecord, deleteRecord } from "../../../../services/ModelServices";
 
 export default function UserPermissions() {
   const baseURL = "http://127.7.6.4:3000/";

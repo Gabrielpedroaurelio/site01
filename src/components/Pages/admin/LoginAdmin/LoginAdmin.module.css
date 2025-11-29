@@ -21,6 +21,9 @@
     overflow: hidden;
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
     transition: all .9s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 .LoginEffect{
     transform: translate(-50%, -50%);
@@ -46,8 +49,9 @@ Falta colocar efeitos
 
 .bodyLogin .containerLogin .info>div {
     padding: 40px 24px;
+    height: 100%;
     backdrop-filter: blur(4px);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.65), rgba(37, 99, 235, 0.45));
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.319), rgba(37, 100, 235, 0.248));
 }
 
 .bodyLogin .containerLogin .info>div h1,

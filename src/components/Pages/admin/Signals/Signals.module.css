@@ -91,6 +91,11 @@
     transition: transform .15s ease-in, box-shadow .15s ease-in;
 }
 
+.listSignals .Signal>div {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
 .listSignals .Signal:hover {
     transform: translateY(-2px);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
@@ -100,22 +105,23 @@
 
 .listSignals .Signal .infoSignal .video {
     height: 130px;
-    width: 190px;
+    width: 170px;
     margin: 8px auto 4px auto;
     border-radius: 10px;
     background-color: #0f172a;
     overflow: hidden;
 }
 
-.listSignals .Signal .infoSignal .video video{
+.listSignals .Signal .infoSignal .video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.listSignals .Signal .infoSignal .content {
-    padding: 0 8px 8px 12px;
+.listSignals .Signal .content {
+    padding: 8px;
     margin-top: 2px;
+
 }
 
 .listSignals .Signal .infoSignal .content span {
@@ -125,7 +131,7 @@
     color: #111827;
 }
 
-.listSignals .Signal .infoSignal .content .category{
+.listSignals .Signal .infoSignal .content .category {
     display: inline-block;
     background-color: #dbeafe;
     font-size: 10px;
@@ -137,13 +143,12 @@
 }
 
 .listSignals .Signal .controllersSignal {
-    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.listSignals .Signal .controllersSignal svg{
+.listSignals .Signal .controllersSignal svg {
     display: block;
     margin: 4px;
     border-radius: 999px;
@@ -172,4 +177,124 @@
         width: 100%;
         max-width: 360px;
     }
+}
+
+
+.modalAdd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+            align-items: center;
+    z-index: 1000;
+}
+
+.cardAdd {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cardAdd h3 {
+    color: #333333;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.cardAdd form label {
+    display: block;
+    margin-bottom: 0px;
+    font-weight: 500;
+    color: #555555;
+    font-size: 0.95em;
+    background-color: #ffffff;
+}
+.cardAdd form input[type="text"],
+.cardAdd form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardAdd form input:focus,
+.cardAdd form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.cardAdd form textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eeeeee;
+}
+
+.actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+
+.actions button[type="button"] {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.actions button[type="button"]:hover {
+    background-color: #dae0e5;
+}
+
+
+.actions button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.actions button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.actions button:active {
+    transform: scale(0.98);
 }

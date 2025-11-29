@@ -4,14 +4,7 @@ import style from './Enterprises.module.css'
 /*
 Eliminar Depois
 */
-import meta from '../../../../assets/_images/company/meta.png'
-import shopify from '../../../../assets/_images/company/shopify.png'
-import starbucks from '../../../../assets/_images/company/starbucks.png'
-import tesla from '../../../../assets/_images/company/tesla.png'
-import airbnb from '../../../../assets/_images/company/airbnb.png'
-import binance from '../../../../assets/_images/company/binance.png'
-import coinbase from '../../../../assets/_images/company/coinbase.png'
-import dropbox from '../../../../assets/_images/company/dropbox.png'
+ 
 import { MdClose, MdDelete, MdEdit, MdPreview } from "react-icons/md";
 import { useState } from "react";
 import { FaPlus, FaUsers } from 'react-icons/fa6'
@@ -60,7 +53,7 @@ export default function Enterprises(params) {
                             <div>
                                 <div className={style.info}>
                                     <div className={style.img}>
-                                        <img src={airbnb} alt="" width={50} />
+                                        <img src="" alt="" width={50} />
                                     </div>
                                     <div className={style.datas}>
                                         <span>Nome da Empresa</span>
@@ -90,12 +83,13 @@ export default function Enterprises(params) {
                     <form action="" method="post">
                         <div className={style.card_enterprise}>
                             <div className={style.img}>
-                                <img src={airbnb} alt="" />
+                                <img src={null} alt=""/>
+                                <input type="file" name="" id="" className={style.uploadbtnimg}/>
                             </div>
                             <div className={style.info}>
                                 <h3>Empresa</h3>
-                                <strong><HiOutlineMail/> emaildaempresas@gmail.com</strong>
-                                <span><FaUsers/> 243 Usuários</span>
+                                <strong><HiOutlineMail/>emaildaempresas@gmail.com</strong>
+                                <span><FaUsers/>243 Usuários</span>
                             </div>
                         </div>
                         <div className={style.cardinput}>
@@ -143,7 +137,7 @@ export default function Enterprises(params) {
                 <div className={style.card_descriacao}>
                     <h2>Ver mais Detalhes</h2>
                     <div className={style.img}>
-                        <img src={airbnb} alt="" />
+                        <img src={null} alt="" />
                     </div>
                     <div className={style.info_empresa}>
                         <strong>Empresa </strong>
@@ -184,7 +178,7 @@ export default function Enterprises(params) {
                     <div className={style.cardClose}>
                         <MdClose onClick={toggleAdd} />
                     </div>
-                    <form action="" method="post" encType="multipart/form-data">
+                    <form method="post" encType="multipart/form-data">
                         <div className={style.inputController}>
                             <label htmlFor="nome_instituicao">Nome da Instituição</label>
                             <input type="text" name="nome_instituicao" id="nome_instituicao" />
@@ -193,27 +187,8 @@ export default function Enterprises(params) {
                             <label htmlFor="email_instituicao">E-mail Instituição</label>
                             <input type="email" name="email_instituicao" id="email_instituicao" />
                         </div>
-                        <div className={style.inputController}>
-                            <label htmlFor="logo_instituicao">Logo da Instittuição</label>
-                            <input type="file" name="logo_instituicao" id="logo_instituicao" />
-                        </div>
-
-                        <fieldset>
-
-                            <summary>Localização</summary>
-                            <div className={style.inputController}>
-                                <label htmlFor="provincia_instituicao">Provincia</label>
-                                <input type="text" name="provincia_instituicao" id="provincia_instituicao" />
-                            </div>
-                            <div className={style.inputController}>
-                                <label htmlFor="municipio_instituicao">Municipio</label>
-                                <input type="text" name="municipio_instituicao" id="municipio_instituicao" />
-                            </div>
-                            <div className={style.inputController}>
-                                <label htmlFor="bairro_instituicao">Local</label>
-                                <input type="text" name="bairro_instituicao" id="bairro_instituicao" />
-                            </div>
-                        </fieldset>
+                      
+ 
                         <div className={style.inputController}>
                             <input type="submit" value="Salvar Empresa" />
                         </div>

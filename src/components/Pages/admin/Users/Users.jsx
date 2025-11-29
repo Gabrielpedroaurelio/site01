@@ -42,6 +42,8 @@ export default function Users() {
     (async () => {
       console.log("Carregando perfis...");
       const res = await listRecords(URLs + "perfil");
+      console.log(res.datas.perfis);
+      
       if (res && res.datas && res.datas.perfis) {
         setPerfis([...res.datas.perfis]);
       }
@@ -111,7 +113,7 @@ export default function Users() {
                 <div className={style.info}>
                   <div>
                     <div className={style.img}>
-                      <img src={pessoa} alt="" width={50} />
+                      <img src={usuario.path_img} alt="" width={50} />
                     </div>
                     <div className={style.datas}>
                       <span className={style.nome_user}>

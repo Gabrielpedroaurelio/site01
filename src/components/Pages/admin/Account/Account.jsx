@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin, FiUser } from "react-icons/fi";
 
 import style from './Account.module.css';
-import { getUsuarioLogado, logoutRequest } from '../../../services/auth';
+import { getUsuarioLogado, logoutRequest } from '../../../../services/auth';
 
 export default function Account() {
   const navigate = useNavigate();

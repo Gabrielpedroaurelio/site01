@@ -18,57 +18,57 @@ export default function Routers(){
         <Route
           path='/admin/dashboards'
           element={
-            <ProtectedRoute>
+           // <ProtectedRoute>
               <Dashboards />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/users'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <Users />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/enterprise'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <Enterprises />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/signals'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <Signals />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/history'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <Histories />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/account'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <Account />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
         <Route
           path='/admin/permissao'
           element={
-            <ProtectedRoute>
+            //<ProtectedRoute>
               <UserPermissions />
-            </ProtectedRoute>
+            //</ProtectedRoute>
           }
         />
        {/* <Route path='/clients' exact element={<LoginAdmin></LoginAdmin>}/>

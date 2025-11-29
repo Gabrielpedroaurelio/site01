@@ -85,22 +85,22 @@ export default function Dashboards() {
         <section className={style.cards_resumes_charts}>
           <div className={style.cardChart}>
             <h3>Evolução de sinais cadastrados</h3>
-            <LineChart
+            {/*<LineChart
               props_data={lineData}
               props_label="Sinais por mês"
               props_labels={lineLabels}
-            />
+            />*/}
           </div>
         </section>
 
         <section className={style.cards_charts}>
           <div className={style.card_chart}>
             <h3>Comparação geral</h3>
-            <BarChart
+            {/*<BarChart
               label_pr="Usuários x Instituições"
               labels_pr={barLabels}
               data_pr={barData}
-            />
+            />*/}
           </div>
         </section>
       </main>

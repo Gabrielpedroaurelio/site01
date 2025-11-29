@@ -1,24 +1,15 @@
-import { FaFileExcel, FaFilePdf, FaMagnifyingGlass, FaPlus } from "react-icons/fa6";
+import { FaFileExcel, FaFilePdf, FaMagnifyingGlass, FaPlus, FaEye } from "react-icons/fa6";
 import NavBarAdmin from "../../../Elements/NavBarAdmin/NavBarAdmin";
-import SideBarAdmin from "../../../Elements/SideBarAdmin/SideBarAdmin";
 import style from './Signals.module.css';
 import { MdDelete, MdEdit, MdPreview } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { createRecord, listRecords } from "../../../../services/ModelServices";
-
+import { useForm } from 'react-hook-form'
 export default function Signals() {
   const [sinais, setSinais] = useState([]);
   const [search, setSearch] = useState("");
   const [showAdd, setShowAdd] = useState(false);
-  const [formData, setFormData] = useState({
-    palavra_portugues: "",
-    descricao_gesto: "",
-    id_categoria: "",
-    video_url: "",
-    thumb_url: "",
-    fonte: "",
-  });
-
+  const { register, handleSubmit, formState: { errors } } = useForm()
   const baseURL = "http://127.7.6.4:3000/";
 
   useEffect(() => {
@@ -33,30 +24,16 @@ export default function Signals() {
   const filtered = sinais.filter((s) =>
     s.palavra_portugues.toLowerCase().includes(search.toLowerCase())
   );
+  async function SubmitSignal(data) {
+    console.log(data);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const resultado = await createRecord(baseURL + "signals", formData);
-    if (resultado && resultado.sucesso) {
-      setSinais((prev) => [...prev, resultado.sinal]);
-      setShowAdd(false);
-      setFormData({
-        palavra_portugues: "",
-        descricao_gesto: "",
-        id_categoria: "",
-        video_url: "",
-        thumb_url: "",
-        fonte: "",
-      });
-    }
   }
 
-    return (
-        <>
+  return (
+    <>
       <NavBarAdmin />
-      <SideBarAdmin />
-            <main className={style.containerSignals}>
-                <div className={style.barsearch}>
+      <main className={style.containerSignals}>
+        <div className={style.barsearch}>
           <FaMagnifyingGlass />
           <input
             type="text"
@@ -64,8 +41,8 @@ export default function Signals() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-                </div>
-                <div className={style.controllers}>
+        </div>
+        <div className={style.controllers}>
           <button className={style.btnFaFileExcel}>
             <FaFileExcel />
             <span>Excel</span>
@@ -81,99 +58,90 @@ export default function Signals() {
             <FaPlus />
             <span>Adicionar</span>
           </button>
-                </div>
-                <div className={style.listSignals}>
+        </div>
+        <div className={style.listSignals}>
           {filtered.map((item) => (
             <div className={style.Signal} key={item.id_sinal}>
-                                <div className={style.infoSignal}>
-                                    <div className={style.video}>
+              <div className={style.infoSignal}>
+                <div className={style.video}>
                   {item.video_url ? (
                     <video src={item.video_url} controls />
                   ) : (
                     <span>Sem vídeo</span>
                   )}
-                                    </div>
-                                    <div className={style.content}>
+                </div>
+                <div className={style.content}>
                   <span>{item.palavra_portugues}</span>
                   <small className={style.category}>{item.categoria_nome}</small>
-                                    </div>
-                                </div>
-                                <div className={style.controllersSignal}>
-                                    <MdEdit />
-                                    <MdDelete />
-                                    <MdPreview />
-                                </div>
-                            </div>
-          ))}
                 </div>
-            </main>
+              </div>
+              <div className={style.controllersSignal}>
+                <MdEdit />
+                <MdDelete />
+                <MdPreview />
+              </div>
+            </div>
+          ))}
+          <div className={style.Signal}>
+            <div className={style.infoSignal}>
+              <div className={style.video}>
+
+              </div>
+              <div className={style.content}>
+                <span>{"item.palavra_portugues"}</span>
+                <small className={style.category}>{"item.categoria_nome"}</small>
+              </div>
+            </div>
+            <div className={style.controllersSignal}>
+              <MdEdit size={30} />
+              <MdDelete size={30} />
+              <FaEye size={30} />
+            </div>
+          </div>
+        </div>
+      </main>
 
       {showAdd && (
         <div className={style.modalAdd}>
           <div className={style.cardAdd}>
             <h3>Novo Sinal</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(SubmitSignal)}>
               <label>
                 Palavra em Português
-                <input
-                  type="text"
-                  value={formData.palavra_portugues}
-                  onChange={(e) =>
-                    setFormData({ ...formData, palavra_portugues: e.target.value })
-                  }
-                  required
-                />
+                <input type="text" {...register("palavra_portugues", {
+                  required: "Este campo é obrigatorio"
+                })} />
               </label>
               <label>
                 Descrição do gesto
-                <textarea
-                  value={formData.descricao_gesto}
-                  onChange={(e) =>
-                    setFormData({ ...formData, descricao_gesto: e.target.value })
-                  }
-                />
+                <textarea name="" id="" {...register("descricao_gesto", {
+                  required: "Este campo é Obrigatorio"
+                })}></textarea>
               </label>
               <label>
-                ID Categoria
-                <input
-                  type="number"
-                  value={formData.id_categoria}
-                  onChange={(e) =>
-                    setFormData({ ...formData, id_categoria: e.target.value })
-                  }
-                />
+                Categoria do Sinal
+                <select name="id_categoria" id="id_categoria" {...register("id_categoria", {
+                  required: "Este campo é Obrigatorio"
+                })}>
+
+                </select>
               </label>
               <label>
-                URL do Vídeo
-                <input
-                  type="text"
-                  value={formData.video_url}
-                  onChange={(e) =>
-                    setFormData({ ...formData, video_url: e.target.value })
-                  }
-                  required
-                />
+                Video Sinal
+                <input type="text" {...register("video_url", {
+                  required: "Este campo é Obrigatorio"
+                })} />
               </label>
               <label>
-                URL da Thumbnail
+                Imagem de Apresentação
                 <input
                   type="text"
-                  value={formData.thumb_url}
-                  onChange={(e) =>
-                    setFormData({ ...formData, thumb_url: e.target.value })
-                  }
+                  {...register("thumb_url ", {
+                    required: "Este campo é Obrigatorio"
+                  })}
                 />
               </label>
-              <label>
-                Fonte
-                <input
-                  type="text"
-                  value={formData.fonte}
-                  onChange={(e) =>
-                    setFormData({ ...formData, fonte: e.target.value })
-                  }
-                />
-              </label>
+              
               <div className={style.actions}>
                 <button type="button" onClick={() => setShowAdd(false)}>
                   Cancelar
