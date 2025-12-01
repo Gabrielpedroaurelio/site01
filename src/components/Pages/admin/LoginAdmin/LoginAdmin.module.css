@@ -102,6 +102,10 @@ Falta colocar efeitos
     top: -25px;
     left: 0px;
 }
+.bodyLogin .containerLogin .controlerInput .valued {
+     top: -25px;
+    left: 0px;
+}
 
 .bodyLogin .containerLogin .controlerInput input[type="submit"] {
     background: linear-gradient(135deg, var(--c1), var(--c2));

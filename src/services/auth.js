@@ -24,6 +24,11 @@ export function logoutRequest() {
 
 export function getUsuarioLogado() {
   const usuario = localStorage.getItem("usuario");
+  console.log("Usuario em localStorage: ");
+  console.log(usuario);
+  console.log(" Fims Usuario em localStorage: ");
+  
+  
   return usuario ? JSON.parse(usuario) : null;
 }
 

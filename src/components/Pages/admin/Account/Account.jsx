@@ -5,23 +5,13 @@ import { FiMail, FiPhone, FiMapPin, FiUser } from "react-icons/fi";
 
 import style from './Account.module.css';
 import { getUsuarioLogado, logoutRequest } from '../../../../services/auth';
+import { Usuario } from '../../../models/Models';
 
 export default function Account() {
   const navigate = useNavigate();
-  const usuario = getUsuarioLogado();
 
-  const user = {
-    nome: usuario?.nome_completo || "Administrador",
-    email: usuario?.email || "sem-email",
-    telefone: "+244 900 000 000",
-    cargo: "Administrador",
-    localizacao: {
-      provincia: "Luanda",
-      municipio: "Talatona",
-      bairro: "Benfica",
-    },
-    foto: null,
-  };
+  const user = new Usuario(getUsuarioLogado)
+  console.log(user);
 
   function handleLogout() {
     logoutRequest();
@@ -36,16 +26,16 @@ export default function Account() {
         <div className={style.profileCard}>
           <div className={style.header}>
             <div className={style.avatar}>
-              {user.foto ? (
-                <img src={user.foto} alt="Foto do usuário" />
+              {user.path_img ? (
+                <img src={user.path_img} alt="Foto do usuário" />
               ) : (
                 <FiUser size={40} className={style.avatarIcon} />
               )}
             </div>
 
             <div className={style.headerInfo}>
-              <h2>{user.nome}</h2>
-              <p>{user.cargo}</p>
+              <h2>{user.nome_completo}</h2>
+              <p>{user.email}</p>
             </div>
           </div>
 
@@ -67,16 +57,11 @@ export default function Account() {
             <div className={style.infoLine}>
               <FiMapPin />
               <span>
-                {user.localizacao.provincia}, {user.localizacao.municipio},{" "}
-                {user.localizacao.bairro}
+                {user.descricao}
               </span>
             </div>
           </div>
-          <div className={style.controller_session}>
-            <button type="button" onClick={handleLogout}>
-              Terminar Sessão
-            </button>
-          </div>
+        
         </div>
       </div>
     </>

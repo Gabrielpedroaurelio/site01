@@ -5,7 +5,7 @@ import NavBarAdmin from "../../../Elements/NavBarAdmin/NavBarAdmin";
 import SideBarAdmin from "../../../Elements/SideBarAdmin/SideBarAdmin";
 import pessoa from '../../../../assets/_images/people01.png';
 import style from './Users.module.css';
-import { createRecord, listRecords, uploadFileFrontend } from '../../../../services/ModelServices';
+import { createRecord, GetURL, listRecords, uploadFileFrontend } from '../../../../services/ModelServices';
 import { FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FiShield, FiShieldOff } from "react-icons/fi";
@@ -22,7 +22,7 @@ export default function Users() {
   const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
   const [file, setFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
-  const URLs = 'http://127.7.6.4:3000/';
+  const URLs = GetURL();
 
   // Carregar usuários
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function Users() {
         if (uploadResponse && uploadResponse.sucesso) {
           payload = {
             ...payload,
-            path_img: uploadResponse.path,
+            path_logo: uploadResponse.path,
           };
           setUploadStatus("Imagem enviada com sucesso!");
         } else {
@@ -200,8 +200,7 @@ export default function Users() {
               <input type="password" name="senha_hash" {...register("senha_hash", {
                 required: "Este campo é obrigatorio"
               })} />
-                          {
-
+                  {
                 errors? (
                 <ParagrafoErro error={errors.senha_hash?.message}/>
                 ):(

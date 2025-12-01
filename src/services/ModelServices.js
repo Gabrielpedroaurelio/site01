@@ -52,3 +52,12 @@ export async function deleteRecord(url) {
   console.log(response);
   return response;
 }
+
+
+
+
+
+
+export function GetURL(){
+  return "http://127.7.6.4:3400/"
+}

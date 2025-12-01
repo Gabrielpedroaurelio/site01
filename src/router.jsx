@@ -5,7 +5,6 @@ import Dashboards from './components/Pages/admin/Dashboards/Dashboards'
 import Enterprises from './components/Pages/admin/Enterprises/Enterprises'
 import Histories from './components/Pages/admin/Histories/Histories'
 import Signals from './components/Pages/admin/Signals/Signals'
-import Teste from './components/tests/Teste'
 import Account from './components/Pages/admin/Account/Account'
 import UserPermissions from './components/Pages/admin/UserPermissions/UserPermissions'
 import ProtectedRoute from './components/Routes/ProtectedRoute'
@@ -13,62 +12,62 @@ export default function Routers(){
   return(
     <BrowserRouter> 
     <Routes>
-        <Route path='/' index element={<Teste/>}/>
+        <Route path='/' index element={<LoginAdmin/>}/>
         <Route path='/admin' element={<LoginAdmin/>}/>
         <Route
           path='/admin/dashboards'
           element={
-           // <ProtectedRoute>
+            <ProtectedRoute>
               <Dashboards />
-            //</ProtectedRoute>
+           </ProtectedRoute>
           }
         />
         <Route
           path='/admin/users'
           element={
-            //<ProtectedRoute>
+           <ProtectedRoute>
               <Users />
-            //</ProtectedRoute>
+           </ProtectedRoute>
           }
         />
         <Route
           path='/admin/enterprise'
           element={
-            //<ProtectedRoute>
+           <ProtectedRoute>
               <Enterprises />
-            //</ProtectedRoute>
+           </ProtectedRoute>
           }
         />
         <Route
           path='/admin/signals'
           element={
-            //<ProtectedRoute>
+            <ProtectedRoute>
               <Signals />
-            //</ProtectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route
           path='/admin/history'
           element={
-            //<ProtectedRoute>
+            <ProtectedRoute>
               <Histories />
-            //</ProtectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route
           path='/admin/account'
           element={
-            //<ProtectedRoute>
+            <ProtectedRoute>
               <Account />
-            //</ProtectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route
           path='/admin/permissao'
           element={
-            //<ProtectedRoute>
+            <ProtectedRoute>
               <UserPermissions />
-            //</ProtectedRoute>
+            </ProtectedRoute>
           }
         />
        {/* <Route path='/clients' exact element={<LoginAdmin></LoginAdmin>}/>

@@ -2,15 +2,18 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logotipo from '../../../assets/_images/favicon.png';
 import { loginRequest } from '../../../services/auth';
+import { GetURL } from '../../../services/ModelServices';
 
 const LoginAdminData = ({ style }) => {
   const [showTitle, setShowTitle] = useState(false);
   const [loading, setLoading] = useState(false);
   const [erro, setErro] = useState("");
+  const [loginemail, setLoginemail] = useState(null)
+  const [loginsenha, setLoginSenha] = useState(null)
   const navigate = useNavigate();
- 
+
   const obseverTitle = showTitle
- 
+
   function ShowTitle(params) {
     if (obseverTitle) {
       setShowTitle(false)
@@ -34,7 +37,7 @@ const LoginAdminData = ({ style }) => {
       const senha = datas.get("password");
 
       const result = await loginRequest(
-        "http://127.7.6.4:3000/auth/login",
+        GetURL() + "auth/login",
         {
           email,
           senha_hash: senha,
@@ -47,6 +50,8 @@ const LoginAdminData = ({ style }) => {
       }
 
       navigate("/admin/dashboards");
+      console.log(result);
+      
     } catch (error) {
       console.error(error);
       setErro("Erro inesperado ao autenticar");
@@ -60,13 +65,13 @@ const LoginAdminData = ({ style }) => {
   return (
     <>
       <div className={style.form} onLoad={() => {
-      
-         
-          ShowTitle()
+
+
+        ShowTitle()
       }}>
         <div className={style.cardImg}>
           <img src={logotipo} alt="" width="50" />
-          <span className={`${showTitle ? style.titleLogo : ""}`}>Projecto<span>  ___  </span>LIGA</span>
+          <span className={`${showTitle ? style.titleLogo : ""}`}>Linguagem Gestual Angolana <hr />  <strong>LIGA</strong> </span>
         </div>
         <form action="" onSubmit={Login}>
 
@@ -77,12 +82,17 @@ const LoginAdminData = ({ style }) => {
           )}
 
           <div className={style.controlerInput}>
-            <input type="email" name="email" id="email" />
-            <label htmlFor="email">E-mail:</label>
+            <input type="email" name="email" id="email" onChange={(e) =>
+              setLoginemail((prev) => prev = e.target.value)
+            } />
+            <label htmlFor="email" className={`${loginemail ? style.valued : null}`}>E-mail:</label>
           </div>
           <div className={style.controlerInput}>
-            <input type="password" name="password" id="password" />
-            <label htmlFor="password">Senha:</label>
+            <input type="password" name="password" id="password"
+              onChange={(e) =>
+                setLoginSenha((prev) => prev = e.target.value)
+              } />
+            <label htmlFor="password" className={`${loginsenha ? style.valued : null}`}>Senha:</label>
           </div>
           <div className={style.controlerInput}>
             <input type="submit" value={loading ? "Entrando..." : "Entrar"} disabled={loading} />
@@ -91,7 +101,7 @@ const LoginAdminData = ({ style }) => {
       </div>
       <div className={style.info}>
         <div>
-          <h1>Projecto Liga</h1>
+          <h1>Linguagem Gestual Angolana</h1>
           <p>
             Painel Administrativo
           </p>
